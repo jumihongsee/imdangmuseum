@@ -1,0 +1,122 @@
+#exhibition-cont {
+  .section-cont {
+    position: relative;
+    padding: 150px 0 200px;
+    .section-header {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .section-title {
+        font-size: 40px;
+        font-weight: 600;
+        color: #000;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &::before {
+          content: "";
+          width: 50px;
+          height: 50px;
+          background: #000;
+          display: block;
+          border-radius: 50%;
+          background: #000 url(/img/main/icon_exhibition_w.png) no-repeat center
+            center;
+        }
+      }
+      .tabs-header {
+        position: absolute;
+        right: 60px;
+        ul {
+          display: flex;
+          align-items: center;
+          li {
+            padding: 0 20px;
+            position: relative;
+            &:before {
+              position: absolute;
+              content: "";
+              width: 8px;
+              height: 8px;
+              background: #f00;
+              border-radius: 50%;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -20px;
+              display: none;
+            }
+            + li {
+              border-left: 1px solid #ddd;
+            }
+            &.active {
+              &::before {
+                display: block;
+              }
+              a {
+                color: #000;
+              }
+            }
+            a {
+              color: #666;
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .tab-conts {
+      width: 100%;
+      height: 300px;
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      color: #666;
+      padding: 100px 50px;
+      margin: 50px 0;
+      position: relative;
+      z-index: 10;
+      .tab_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        gap: 20px;
+        .empty-alert {
+          width: 60px;
+          height: 60px;
+          background: #fff;
+          border-radius: 50%;
+          background: #fff url("/img/main/icon_warning_brown.png") no-repeat
+            center center;
+        }
+      }
+    }
+    .bg-txt {
+      width: 100%;
+      text-align: center;
+      font-size: 100px;
+      font-weight: 800;
+      display: block;
+      position: absolute;
+      z-index: 2;
+      bottom: -23px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bg {
+      position: absolute;
+      bottom: 0;
+      background: #f3f7fa;
+      width: 100vw;
+      height: calc(50% - 10px);
+      z-index: 1;
+    }
+  }
+}
