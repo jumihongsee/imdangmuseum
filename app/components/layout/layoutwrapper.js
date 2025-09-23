@@ -1,37 +1,34 @@
-'use client'
-import Header from "./header/header"
-import { useState, useEffect } from 'react'
+"use client";
+import Footer from "./footer/Footer";
+import Header from "./header/Header";
+import { useState, useEffect } from "react";
 
-export default function LayoutWrapper({children}){
+export default function LayoutWrapper({ children }) {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isFixed, setIsFixed] = useState(false);
 
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [isFixed, setIsFixed] = useState(false);
-    
-    useEffect(() => {
-        const handleScroll = () => {
-        const currentY = window.scrollY
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
 
-        if ( currentY > 100 && currentY < lastScrollY) {
-            setIsFixed(true)
-        } else {
-            setIsFixed(false)
-        }
+      if (currentY > 100 && currentY < lastScrollY) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
 
-        setLastScrollY(currentY)
-        }
+      setLastScrollY(currentY);
+    };
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [lastScrollY])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-    return(
-        <>
-            <Header isFixed={isFixed} />
-            <main style={{ paddingTop: isFixed ? "100px" : "0" }}>
-                {children}
-            </main>
-        </>
-
-    )
-
+  return (
+    <>
+      <Header isFixed={isFixed} />
+      <main style={{ paddingTop: isFixed ? "100px" : "0" }}>{children}</main>
+      <Footer />
+    </>
+  );
 }

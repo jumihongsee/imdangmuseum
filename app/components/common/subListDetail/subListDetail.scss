@@ -1,0 +1,104 @@
+@import "@/styles/variables";
+#sublist-detail-cont {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  .left-img-wrap {
+    width: 380px;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -10px;
+      top: -10px;
+      background: $sub-color-n;
+      z-index: -1;
+    }
+  }
+  .right-info-wrap {
+    width: calc(100% - 380px);
+    .list-cont-head {
+      margin-bottom: 50px;
+      .view-subject {
+        font-size: 26px;
+        font-weight: 600;
+        color: #000;
+      }
+      .view-list-box {
+        padding: 35px;
+        background: #f8f8f8;
+        margin-top: 30px;
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px 0;
+          dt {
+            color: #000;
+            width: 115px;
+            font-weight: 600;
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 4px;
+              height: 4px;
+              right: 15px;
+              top: 50%;
+              transform: translateY(-50%);
+              background: #444;
+            }
+          }
+          dd {
+            width: calc(100% - 115px);
+          }
+        }
+      }
+    }
+    .list-cont-body {
+      h6 {
+        font-size: 22px;
+        color: #000;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #000;
+        font-weight: 600;
+      }
+      > ul {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        li {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+        &.scholarship-list {
+          > li {
+            margin: 40px 0;
+            > ul {
+              border: none;
+            }
+          }
+          p {
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  button {
+    margin: 80px auto;
+    background: $sub-color-n;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 12px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

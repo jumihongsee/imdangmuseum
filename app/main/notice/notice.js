@@ -39,7 +39,7 @@ export default function Notice() {
                 {data?.map((item, index) =>
                   index < 3 ? (
                     <li key={index}>
-                      <a href="">
+                      <a href={`/contents/board/${item.id}`}>
                         <span className="list-noti">{item.category}</span>
                         <strong>{item.title}</strong>
                         <span className="list-desc">

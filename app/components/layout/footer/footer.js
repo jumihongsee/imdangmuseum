@@ -9,8 +9,6 @@ export default function Footer() {
     setIsActive((prev) => !prev);
   };
 
-  console.log(isActive);
-
   return (
     <footer id="footer">
       <div className="inr">

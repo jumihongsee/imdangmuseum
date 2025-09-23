@@ -1,0 +1,89 @@
+// [ant-desgin collapse 커스텀]
+
+.ant-collapse {
+  border: none;
+  border-radius: 0;
+  background: none;
+  width: 100%;
+  .ant-collapse-item {
+    &.ant-collapse-item-active {
+      .ant-collapse-header {
+        &::before {
+          background: #000;
+        }
+        .ant-collapse-header-text {
+          color: #000;
+        }
+      }
+    }
+    //   상단 (Q)
+    .ant-collapse-header {
+      padding: 20px 30px !important;
+      position: relative;
+      align-items: center !important;
+      gap: 10px;
+      &:hover {
+        background: #f8f8f8;
+      }
+      &::before {
+        content: "Q";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #888;
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .ant-collapse-header-text {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #555;
+      }
+    }
+
+    // 하단 (A)
+    .ant-collapse-content-box {
+      // border: 1px solid #f00;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 30px !important;
+      background: #f8f8f8;
+      &::before {
+        content: "A";
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #b57020;
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+      }
+      p {
+        font-size: 16px;
+        color: #444;
+      }
+    }
+  }
+}
+
+//  arrow
+.ant-collapse-expand-icon {
+  position: absolute;
+  right: 0;
+
+  .ant-collapse-arrow {
+    font-size: 18px !important;
+    color: #444 !important;
+  }
+}

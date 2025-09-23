@@ -80,9 +80,11 @@
             padding-top: 0px;
             opacity: 0;
             transition: all 0.2s ease;
+            pointer-events: none;
             &.active {
               padding-top: 30px;
               opacity: 1;
+              pointer-events: auto;
             }
             ul {
               display: flex;
@@ -361,4 +363,27 @@
       visibility: visible;
     }
   }
+}
+
+.ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: #000;
+}
+
+.ant-menu-light.ant-menu-inline .ant-menu-item {
+  background-color: #fff;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+
+  &:hover {
+    background: #fff !important;
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.ant-menu-light .ant-menu-item-selected {
+  color: #222;
+  background: #fff;
+  font-weight: 600;
 }

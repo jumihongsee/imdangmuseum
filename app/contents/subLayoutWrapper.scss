@@ -1,0 +1,13 @@
+.cont-wrapper {
+  padding: 150px 0px 200px;
+  height: auto;
+  .inr {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 100px;
+    .sub-contents {
+      width: 100%;
+    }
+  }
+}

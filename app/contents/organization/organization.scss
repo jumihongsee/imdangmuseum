@@ -1,0 +1,173 @@
+@import "@/styles/variables";
+
+#organization {
+  .orga-table {
+    .orga-cont-wrap {
+      background: #f8f8f8;
+      padding: 80px 50px 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul {
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+        li {
+          &.depth1 {
+            .depth-box {
+              width: 220px;
+              height: 220px;
+              border-radius: 50%;
+              background: #fff;
+              border: 1px solid #ddd;
+              position: relative;
+              margin: 0 auto;
+              &::before {
+                position: absolute;
+                content: "";
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid $sub-color-n;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+              .depth-cont {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                &::after,
+                &::before {
+                  position: absolute;
+                  content: "";
+                  width: 14px;
+                  height: 14px;
+                  background: $sub-color-n;
+                  border-radius: 50%;
+                  z-index: 2;
+                }
+                &::before {
+                  left: 1px;
+                }
+                &::after {
+                  right: 1px;
+                }
+                strong {
+                  font-size: 30px;
+                  font-weight: 600;
+                  color: #002856;
+                }
+                p {
+                  font-size: 20px;
+                  color: #002856;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+          &.depth2,
+          &.depth3 {
+            position: relative;
+            width: 200px;
+            border: 1px solid #ddd;
+            margin-top: -80px;
+            strong {
+              display: block;
+              width: 100%;
+              font-size: 20px;
+              color: #fff;
+              padding: 10px 20px;
+            }
+            p {
+              width: 100%;
+              font-size: 18px;
+              color: #222;
+              padding: 10px 20px;
+              background: #fff;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              top: -32px;
+              width: 100%;
+              height: 1px;
+              background: #ccc;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              width: 1px;
+              height: 30px;
+              background: #ccc;
+              top: -32px;
+            }
+          }
+          &.depth2 {
+            float: left;
+            strong {
+              background: #8f993e;
+            }
+            &::before {
+              left: 50%;
+            }
+          }
+          &.depth3 {
+            float: right;
+            strong {
+              background: $sub-color-n;
+            }
+            &::before {
+              right: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .orga-work {
+    margin-top: 80px;
+    .pg-tabs {
+      margin-bottom: 50px;
+    }
+    .orga-list-wrap {
+      .tab-content {
+        ul {
+          border-top: 1px solid #ddd;
+          li {
+            padding: 25px 20px;
+            border-bottom: 1px solid #ddd;
+            h4 {
+              font-size: 20px;
+              font-weight: 600;
+              color: #000;
+            }
+            dl {
+              display: flex;
+              gap: 10px;
+              font-size: 16px;
+              margin-top: 10px;
+              dt {
+                line-height: 1.2;
+                font-weight: 500;
+                color: #000;
+              }
+              dd {
+                padding-right: 15px;
+                line-height: 1.2;
+                & + dt {
+                  border-left: 1px solid #ddd;
+                  padding-left: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.inquiry {
+  .inquiry-num {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 80px;
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      padding-left: 25px;
+      background: url(/img/contents/icon_tip.png) no-repeat left center;
+    }
+    em {
+      padding-left: 15px;
+      font-weight: 600;
+      font-size: 18px;
+      border-left: 1px solid #ddd;
+      font-weight: 500;
+      color: #444;
+    }
+  }
+}
+.survey {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+
+  fieldset {
+    legend {
+      display: none;
+    }
+    .survey-head {
+      padding: 15px 30px;
+      background: #f6f6f6;
+      border-bottom: 1px solid #ccc;
+      h4 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #364d7a;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #364d7a url(/img/contents/icon_satis.png) no-repeat center
+            center;
+        }
+      }
+    }
+    .survey-cont {
+      padding: 20px 30px;
+      > p {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .form-row {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px;
+        .rdio-group {
+          display: flex;
+          width: calc(100% - 400px);
+          .rdo-btn {
+            position: relative;
+            vertical-align: middle;
+            margin: 2px 10px 2px 0;
+
+            .rdo {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 0;
+              height: 0;
+              line-height: 0;
+              font-size: 0;
+              background: transparent;
+              outline: none;
+              &:checked + label {
+                color: #000;
+                outline: 2px dotted #de4949;
+                outline-offset: -0.1em;
+                transition: none;
+                &::before {
+                  background: #df4c24 url(/img/contents/radio_on.png) center
+                    center;
+                  background-size: 20px auto;
+                  border-color: #df4c24;
+                }
+              }
+            }
+            label {
+              position: relative;
+              display: inline-block;
+              vertical-align: middle;
+              font-size: 15px;
+              font-weight: 500;
+              line-height: 1;
+              align-items: center;
+              cursor: pointer;
+              &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+        .inp-box {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 5px;
+          width: 100%;
+          input {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 15px;
+            font-weight: 500;
+            color: #000;
+            border: 1px solid #888;
+            padding: 0 10px;
+            height: 40px;
+            margin: 2px;
+          }
+          button {
+            height: 40px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            padding: 0 20px;
+            background: #364d7a;
+          }
+        }
+      }
+    }
+  }
+}

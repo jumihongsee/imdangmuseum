@@ -1,8 +1,8 @@
-import Footer from "./components/layout/footer/footer";
-import Banner from "./main/banner/banner";
-import Exhibition from "./main/exhibition/exhibition";
-import FooterInfo from "./main/info/info";
-import Notice from "./main/notice/notice";
+import Footer from "./components/layout/footer/Footer";
+import Banner from "./main/banner/Banner";
+import Exhibition from "./main/exhibition/Exhibition";
+import FooterInfo from "./main/info/Info";
+import Notice from "./main/notice/Notice";
 
 export default function Home() {
   return (
@@ -11,7 +11,6 @@ export default function Home() {
       <Exhibition />
       <Notice />
       <FooterInfo />
-      <Footer />
     </>
   );
 }

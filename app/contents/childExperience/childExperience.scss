@@ -1,0 +1,241 @@
+@import "@/styles/variables";
+
+#child-experience {
+  .map-cont {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .pin-box {
+      position: relative;
+      .map-pin {
+        position: absolute;
+        a {
+          display: flex;
+          position: relative;
+          z-index: 1;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: rgba(181, 112, 32, 0.5);
+            z-index: -1;
+            animation: zoomIn 1.5s infinite forwards;
+          }
+          strong {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: $sub-color-n;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+          }
+        }
+        &.pin-1 {
+          left: 25%;
+          top: 27%;
+        }
+        &.pin-2 {
+          left: 40%;
+          top: 30%;
+        }
+        &.pin-3 {
+          left: 57%;
+          top: 42%;
+        }
+        &.pin-4 {
+          left: 67%;
+          top: 55%;
+        }
+        &.pin-5 {
+          left: 42%;
+          top: 80%;
+        }
+      }
+    }
+    .img-map {
+      width: 100%;
+      height: 100%;
+      img {
+        background-size: cover;
+      }
+    }
+    .guide-box {
+      margin-top: 50px;
+      border: 1px solid #eae5dc;
+      display: flex;
+      .left-info {
+        width: 300px;
+        background: #fbf9f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        dl {
+          dt {
+            font-size: 26px;
+            font-weight: 600;
+            color: #000;
+            padding-left: 45px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+          dd {
+            font-size: 32px;
+            font-weight: 700;
+            color: #002856;
+            text-align: center;
+          }
+        }
+      }
+      .right-schedule {
+        width: calc(100% - 300px);
+        padding: 40px;
+        h4 {
+          font-size: 26px;
+          font-weight: 600;
+          color: #000;
+          position: relative;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #000;
+            margin-right: 10px;
+          }
+        }
+        ul {
+          display: flex;
+          gap: 5px;
+          flex-wrap: wrap;
+          margin-top: 10px;
+          li {
+            width: calc(100% / 4 - 10px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #444;
+            strong {
+              margin-right: 10px;
+            }
+          }
+        }
+        .btn-reserv {
+          margin-top: 20px;
+          a {
+            color: $sub-color-n;
+            border: 1px solid $sub-color-n;
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 15px 25px;
+            border-radius: 5px;
+            position: relative;
+            transition: all 0.3s linear;
+            &:hover {
+              background: $sub-color-n;
+              color: #fff;
+              text-decoration: underline;
+              &::after {
+                background: url("/img/contents/icon_cal_white.png") no-repeat
+                  center center / 17px;
+              }
+            }
+
+            &::after {
+              content: "";
+              width: 20px;
+              height: 20px;
+              display: block;
+              margin-left: 10px;
+              transition: all 0.3s linear;
+              background: url("/img/contents/icon_cal_brown.png") no-repeat
+                center center / 17px;
+            }
+          }
+        }
+      }
+    }
+    .detail-cont {
+      ol {
+        li {
+          margin: 50px 0;
+          display: flex;
+          border: 1px solid #ddd;
+          font-weight: 600;
+          > div {
+            width: 50%;
+            &.detail-info {
+              padding: 50px;
+              h4 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 30px;
+                font-weight: 600;
+                color: $sub-color-n;
+                .exp-num {
+                  width: 30px;
+                  height: 30px;
+                  background: $sub-color-n;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: 30px;
+                  color: #fff;
+                  font-size: 15px;
+                }
+              }
+              p {
+                margin-top: 20px;
+                font-size: 18px;
+                white-space: pre-line;
+                color: #444;
+                line-height: 1.5;
+                font-weight: 500;
+              }
+            }
+            &.detail-img {
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
