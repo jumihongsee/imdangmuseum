@@ -5,10 +5,16 @@ $sub-color-b: #1f1e1e;
 $sub-color-y: #ffde9c;
 $sub-color-b2: #111315;
 
-$s-pc: 1400px;
-
 $hpad60: 0 60px;
 $hpad80: 0 60px;
+
+$m-pc: 1600px;
+$s-pc: 1400px;
+$ss-pc: 1200px;
+$l-tab: 1024px;
+$tab: 960px;
+$mob: 768px;
+$s-mob: 480px;
 
 @mixin scr-rd-only {
   position: absolute;

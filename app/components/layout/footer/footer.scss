@@ -1,10 +1,19 @@
 @import "@/styles/variables";
 #footer {
   background: $sub-color-b2;
-  padding: 100px 0 120px;
+  padding: 100px 80px 120px;
+  @media (max-width: $mob) {
+    padding: 100px 50px 120px;
+  }
+  .inr {
+    padding: 0;
+  }
   .footer-cont {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $mob) {
+      flex-direction: column;
+    }
     address {
       margin-top: 30px;
       span {
@@ -15,6 +24,10 @@
         margin-right: 30px;
         margin-bottom: 10px;
         font-style: normal;
+        @media (max-width: $mob) {
+          font-size: 15px;
+          margin-right: 10px;
+        }
       }
     }
     .copy {
@@ -23,14 +36,28 @@
       color: #aaa;
       letter-spacing: 0.06em;
     }
+    .footer-left {
+      img {
+        @media (max-width: $mob) {
+          width: 150px;
+        }
+      }
+    }
     .footer-right {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      @media (max-width: $mob) {
+        align-items: flex-start;
+        margin-top: 30px;
+      }
       nav {
         ul {
           display: flex;
           gap: 30px;
+          @media (max-width: $mob) {
+            gap: 15px;
+          }
           li {
             a {
               font-size: 18px;
@@ -60,6 +87,13 @@
               border: 1px solid #fff;
               line-height: 40px;
               color: #fff;
+              @media (max-width: $mob) {
+                min-width: 200px;
+                font-size: 14px;
+                padding: 0 30px 0 10px;
+                height: 35px;
+                line-height: 35px;
+              }
               &::after {
                 content: "";
                 display: block;
@@ -120,6 +154,9 @@
       .footer-wamark {
         text-align: right;
         margin: 25px 0;
+        @media (max-width: $mob) {
+          text-align: left;
+        }
         img {
           width: 20%;
         }

@@ -6,6 +6,9 @@
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     margin-bottom: 80px;
+    @media (max-width: $mob) {
+      margin-bottom: 50px;
+    }
     .img {
       display: block;
     }
@@ -27,6 +30,11 @@
           align-items: center;
           justify-content: center;
           font-weight: 600;
+          @media (max-width: $mob) {
+            width: 30px;
+            height: 30px;
+            font-size: 13px;
+          }
           &::after {
             content: "";
             position: absolute;
@@ -38,6 +46,18 @@
             border-top: 8px solid #fff;
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
+            @media (max-width: $s-pc) {
+              bottom: -5px;
+              border-top: 6px solid #fff;
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+            }
+            @media (max-width: $mob) {
+              bottom: -4px;
+              border-top: 5px solid #fff;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+            }
           }
         }
         &.point1 {
@@ -47,6 +67,9 @@
         &.point2 {
           left: 26%;
           top: 29%;
+          @media (max-width: $mob) {
+            top: 18%;
+          }
         }
         &.point3 {
           left: 28%;
@@ -65,7 +88,7 @@
           top: 8%;
         }
         &.point7 {
-          left: 0;
+          left: 5%;
           top: 11%;
         }
       }
@@ -77,6 +100,13 @@
         text-align: center;
         padding: 8px 15px;
         border-radius: 10px;
+        @media (max-width: $s-pc) {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        @media (max-width: $mob) {
+          display: none;
+        }
       }
     }
     .fac-top-cont {
@@ -85,16 +115,34 @@
         flex-wrap: wrap;
         padding: 60px 70px;
         gap: 15px;
+        @media (max-width: $s-pc) {
+          gap: 20px;
+          padding: 50px 60px;
+        }
+        @media (max-width: $mob) {
+          padding: 30px;
+          gap: 15px 5px;
+        }
+        @media (max-width: 640px) {
+          gap: 10px;
+          padding: 40px 25px;
+        }
         > li {
           width: calc(100% / 3 - 15px);
           display: flex;
           align-items: center;
           gap: 15px;
-
+          @media (max-width: $s-pc) {
+            width: calc(50% - 15px);
+          }
+          @media (max-width: 640px) {
+            width: 100%;
+          }
           .number {
             color: $sub-color-n;
             font-size: 16px;
             font-weight: 600;
+            flex-shrink: 0;
             width: 35px;
             height: 35px;
             background: #fff;
@@ -102,6 +150,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @media (max-width: $mob) {
+              width: 30px;
+              height: 30px;
+            }
+            @media (max-width: 640px) {
+              font-size: 14px;
+              width: 25px;
+              height: 25px;
+            }
           }
           .fac-name {
             display: flex;
@@ -110,6 +167,12 @@
             color: #fff;
             font-weight: 600;
             font-size: 20px;
+            @media (max-width: $s-pc) {
+              font-size: 18px;
+            }
+            @media (max-width: 640px) {
+              font-size: 15px;
+            }
             em {
               font-size: 14px;
               font-weight: 500;
@@ -117,6 +180,9 @@
               color: #ddd;
               line-height: 1.2;
               margin-top: 5px;
+              @media (max-width: $mob) {
+                font-size: 12px;
+              }
             }
           }
         }
@@ -127,6 +193,18 @@
     padding: 80px 150px;
     background: $sub-color-g2;
     border-radius: 10px;
+    @media (max-width: $s-pc) {
+      padding: 80px;
+    }
+    @media (max-width: $ss-pc) {
+      padding: 80px 120px;
+    }
+    @media (max-width: $mob) {
+      padding: 40px 50px;
+    }
+    @media (max-width: 640px) {
+      padding: 30px;
+    }
     h5 {
       font-size: 0;
     }

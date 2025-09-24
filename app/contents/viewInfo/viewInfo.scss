@@ -9,11 +9,23 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    @media (max-width: $s-pc) {
+      gap: 10px;
+    }
+    @media (max-width: $mob) {
+      padding: 80px 40px;
+    }
     h4 {
       font-family: "AritaBuri";
       font-weight: 700;
       font-size: 36px;
       color: #fff;
+      @media (max-width: $s-pc) {
+        font-size: 30px;
+      }
+      @media (max-width: $mob) {
+        font-size: 26px;
+      }
     }
     .view-time {
       font-size: 40px;
@@ -21,12 +33,27 @@
       color: #fff;
       background: url("/img/contents/icon_clock_w.png") no-repeat left center;
       padding-left: 40px;
+      @media (max-width: $s-pc) {
+        font-size: 36px;
+        background-size: 26px auto;
+      }
+      @media (max-width: $mob) {
+        font-size: 30px;
+        background-size: 24px auto;
+      }
     }
     .view-ment {
       font-size: 18px;
       padding-left: 25px;
       color: #fff;
       background: url("/img/contents/icon_alert_w.png") no-repeat left center;
+      @media (max-width: $s-pc) {
+        font-size: 16px;
+      }
+      @media (max-width: $mob) {
+        font-size: 15px;
+        background-position: left top;
+      }
     }
   }
 
@@ -41,14 +68,40 @@
 
   .view-info {
     margin-top: 80px;
+    @media (max-width: $s-pc) {
+      margin-top: 50px;
+    }
     ul {
       display: flex;
       justify-content: space-between;
+      @media (max-width: $s-pc) {
+        flex-direction: column;
+      }
       li {
         width: calc(100% / 3);
         padding: 0 35px;
+        @media (max-width: $s-pc) {
+          width: 100%;
+          position: relative;
+          padding: 20px 10px 20px 170px;
+          @media (max-width: $s-pc) {
+            border-bottom: 1px solid #ddd;
+          }
+          @media (max-width: $mob) {
+            padding: 20px 10px 20px 150px;
+          }
+        }
+
         + li {
           border-left: 1px solid #ddd;
+          @media (max-width: $s-pc) {
+            border-left: none;
+          }
+        }
+        &:last-child {
+          @media (max-width: $s-pc) {
+            border-bottom: none;
+          }
         }
         &.time {
           h5 {
@@ -73,6 +126,16 @@
           font-weight: 600;
           color: #3d546e;
           padding-left: 35px;
+          @media (max-width: $s-pc) {
+            position: absolute;
+            left: 0;
+            top: 25px;
+          }
+          @media (max-width: $mob) {
+            font-size: 22px;
+            padding-left: 30px;
+            background-size: 22px !important;
+          }
         }
         p {
           &:nth-child(2) {
@@ -80,6 +143,12 @@
             font-weight: 500;
             color: #000;
             margin-top: 10px;
+            @media (max-width: $s-pc) {
+              font-size: 20px;
+            }
+            @media (max-width: $mob) {
+              font-size: 18px;
+            }
           }
         }
       }
@@ -89,11 +158,18 @@
     margin-top: 100px;
     padding: 60px;
     background: #f8f8f8f8;
+    @media (max-width: $mob) {
+      margin-top: 40px;
+      padding: 50px 40px;
+    }
     .note-cont {
       h5 {
         font-size: 22px;
         font-weight: 600;
         color: #000;
+        @media (max-width: $mob) {
+          font-size: 18px;
+        }
       }
       ul {
         display: flex;
@@ -110,7 +186,10 @@
           align-items: center;
           position: relative;
           color: #444;
-
+          @media (max-width: $s-pc) {
+            width: 100%;
+            font-size: 15px;
+          }
           span {
             width: 45px;
             height: 45px;
@@ -123,6 +202,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @media (max-width: $mob) {
+              width: 40px;
+              height: 40px;
+            }
             img {
               width: 40%;
               display: block;
@@ -142,6 +225,10 @@
       color: #444;
       font-weight: 500;
       font-size: 18px;
+      @media (max-width: $mob) {
+        padding: 50px 10px;
+        font-size: 16px;
+      }
       > h5 {
         position: absolute;
         left: 20px;
@@ -149,15 +236,26 @@
         font-size: 26px;
         font-weight: 600;
         color: #000;
+        @media (max-width: $mob) {
+          position: static;
+          font-size: 22px;
+          margin-bottom: 20px;
+        }
       }
       > h6 {
         font-size: 22px;
         font-weight: 600;
         margin-bottom: 10px;
         color: #000;
+        @media (max-width: $mob) {
+          font-size: 18px;
+        }
       }
       > p {
         font-size: 16px;
+        @media (max-width: $mob) {
+          font-size: 15px;
+        }
       }
     }
     .list-chk {
@@ -166,9 +264,13 @@
         position: relative;
         display: flex;
         margin-bottom: 10px;
+        strong {
+          color: $sub-color-n;
+        }
         &::before {
           display: block;
           content: "";
+          flex-shrink: 0;
           width: 20px;
           height: 20px;
           border-radius: 100%;
@@ -212,6 +314,9 @@
       margin-top: 20px;
       display: flex;
       gap: 10px;
+      @media (max-width: $m-pc) {
+        flex-direction: column;
+      }
       a {
         background: $sub-color-n;
         padding: 20px 15px;
@@ -222,6 +327,18 @@
         position: relative;
         font-weight: bold;
         font-size: 16px;
+        @media (max-width: $m-pc) {
+          width: 60%;
+          justify-content: center;
+          height: 50px;
+          font-size: 15px;
+        }
+        @media (max-width: $s-pc) {
+          width: 80%;
+        }
+        @media (max-width: $ss-pc) {
+          width: 300px;
+        }
         &:hover {
           text-decoration: underline;
         }
@@ -274,9 +391,11 @@
       ol {
         display: flex;
         flex-wrap: wrap;
-        // gap: 30px;
         justify-content: space-between;
         margin-bottom: 30px;
+        @media (max-width: $m-pc) {
+          gap: 30px;
+        }
         li {
           background: #f8f8f8;
           padding: 40px 25px;
@@ -286,6 +405,12 @@
           display: flex;
           flex-direction: column;
           align-items: center;
+          @media (max-width: $m-pc) {
+            width: calc(50% - 15px);
+          }
+          @media (max-width: $mob) {
+            padding: 30px 20px;
+          }
           + li {
             &::before {
               content: "";
@@ -299,6 +424,14 @@
               border: 2px solid #888;
               border-left: none;
               border-bottom: none;
+              @media (max-width: 1600px) {
+                left: -25px;
+              }
+            }
+          }
+          &:nth-child(odd) {
+            &::before {
+              display: none;
             }
           }
           .step-num {
@@ -326,26 +459,44 @@
             display: block;
             width: 40px;
             height: 40px;
+            @media (max-width: $mob) {
+              margin: 0 auto 10px;
+            }
           }
           &.step-1 .icon {
             background: url("/img/contents/rent_step_1.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              background-size: 26px;
+            }
           }
           &.step-2 .icon {
             background: url("/img/contents/rent_step_2.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              background-size: 26px;
+            }
           }
           &.step-3 .icon {
             background: url("/img/contents/rent_step_3.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              background-size: 26px;
+            }
           }
           &.step-4 .icon {
             background: url("/img/contents/rent_step_4.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              background-size: 26px;
+            }
           }
           &.step-5 .icon {
             background: url("/img/contents/rent_step_5.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              background-size: 26px;
+            }
           }
         }
       }

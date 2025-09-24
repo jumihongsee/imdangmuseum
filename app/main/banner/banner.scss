@@ -8,6 +8,18 @@
   position: relative;
   width: 100%;
   width: calc(100% - 120px);
+  .inr {
+    padding: 0;
+  }
+  @media (max-width: $mob) {
+    width: calc(100% - 60px);
+  }
+  @media (max-width: $s-mob) {
+    width: 100%;
+  }
+  .top-banner {
+    position: relative;
+  }
   .scroll {
     position: absolute;
     bottom: 150px;
@@ -17,6 +29,10 @@
     background: rgba(0, 0, 0, 0.5);
     padding-bottom: 150px;
     z-index: 10;
+    @media (max-width: $mob) {
+      display: none;
+    }
+
     .scroll-bar {
       position: absolute;
       top: 0;
@@ -45,11 +61,26 @@
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 180px;
+    bottom: 100px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding: 0 120px;
+    @media (max-width: $m-pc) {
+      padding: 0 60px;
+    }
+    @media (max-width: $ss-pc) {
+      bottom: 80px;
+    }
+    @media (max-width: $tab) {
+      flex-direction: column;
+      align-items: center;
+      bottom: 50px;
+      gap: 40px;
+    }
+    @media (max-width: $mob) {
+      padding: 0 30px;
+    }
     .visual-tit {
       h1,
       p {
@@ -58,6 +89,22 @@
       h1 {
         font-family: "Aritaburi";
         font-size: 70px;
+        word-break: break-all;
+        @media (max-width: $m-pc) {
+          font-size: 60px;
+        }
+        @media (max-width: $s-pc) {
+          font-size: 50px;
+        }
+        @media (max-width: $ss-pc) {
+          font-size: 44px;
+        }
+        @media (max-width: $tab) {
+          text-align: center;
+        }
+        @media (max-width: $mob) {
+          font-size: 30px;
+        }
       }
       p {
         font-size: 24px;
@@ -65,6 +112,15 @@
         line-height: 1.4;
         &:nth-child(3) {
           margin-top: 20px;
+        }
+        @media (max-width: $m-pc) {
+          font-size: 20px;
+        }
+        @media (max-width: $tab) {
+          text-align: center;
+        }
+        @media (max-width: $mob) {
+          font-size: 17px;
         }
       }
     }
@@ -74,6 +130,12 @@
         margin: 0 30px;
         width: 170px;
         position: relative;
+        @media (max-width: $s-pc) {
+          width: 150px;
+        }
+        @media (max-width: $mob) {
+          width: 120px;
+        }
         img {
           width: 100%;
           animation: rotation 7s linear infinite;
@@ -89,15 +151,26 @@
             font-family: "Aritaburi";
             font-size: 40px;
             color: #fff;
+            display: flex;
+            align-items: center;
             &:first-child {
               font-size: 50px;
+            }
+            @media (max-width: $mob) {
+              font-size: 24px;
+              strong {
+                font-size: 30px;
+              }
             }
           }
         }
       }
-      .slick-arrow {
+      .custom-arrow {
         img {
           width: 60px;
+          @media (max-width: $s-pc) {
+            width: 40px;
+          }
         }
       }
     }
@@ -105,6 +178,10 @@
   // ant-slider <Carousel />
   .ant-carousel {
     .slick-list {
+      @media (max-width: $mob) {
+        height: 500px;
+      }
+
       > div {
         > div {
           width: 100%;
@@ -118,7 +195,7 @@
         }
       }
     }
-    .slick-arrow {
+    .custom-arrow {
       background-size: cover;
       border: 1px;
       &::after {
@@ -129,6 +206,9 @@
   .exhibition-info {
     background: $sub-color-b;
     padding: 25px;
+    @media (max-width: $tab) {
+      padding: 25px 35px;
+    }
 
     dl {
       display: flex;
@@ -137,22 +217,63 @@
       gap: 40px;
       font-size: 22px;
       color: $sub-color-y;
+      @media (max-width: $m-pc) {
+        gap: 25px;
+        font-size: 20px;
+      }
+      @media (max-width: $s-pc) {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+      }
+      @media (max-width: $mob) {
+        font-size: 18px;
+      }
     }
     dt {
       font-weight: 600;
       padding-left: 40px;
       flex-shrink: 0;
       width: max-content;
+
+      @media (max-width: $ss-pc) {
+        width: calc(25% - 40px);
+      }
+      @media (max-width: $tab) {
+        width: calc(50% - 40px);
+      }
+      @media (max-width: $s-mob) {
+        width: 100%;
+        padding-left: 30px;
+      }
+
       &.info_1 {
         background: url("/img/main/icon_clock_yellow.png") no-repeat left center;
+        @media (max-width: $mob) {
+          background-size: 20px auto;
+        }
       }
       &.info_2 {
         background: url("/img/main/icon_inquiry_yellow.png") no-repeat left
           center;
+        @media (max-width: $mob) {
+          background-size: 20px auto;
+        }
       }
       &.info_3 {
         background: url("/img/main/icon_holiday_yellow.png") no-repeat left
           center;
+        @media (max-width: $mob) {
+          background-size: 20px auto;
+        }
+        &::after {
+          @media (max-width: $ss-pc) {
+            margin-left: 47px;
+          }
+          @media (max-width: $mob) {
+            margin-left: 25px;
+          }
+        }
       }
       &:after {
         content: "";
@@ -162,6 +283,44 @@
         vertical-align: middle;
         background: $sub-color-y;
         margin-left: 30px;
+        @media (max-width: $m-pc) {
+          width: 20px;
+        }
+        @media (max-width: $tab) {
+          width: 50%;
+        }
+        @media (max-width: $mob) {
+          width: 20%;
+          margin-left: 10px;
+        }
+        @media (max-width: $s-mob) {
+          width: 70%;
+        }
+      }
+    }
+    dd {
+      &:last-child {
+        @media (max-width: $ss-pc) {
+          width: 60%;
+        }
+        @media (max-width: $tab) {
+          width: 50%;
+        }
+        @media (max-width: $s-mob) {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: $ss-pc) {
+        width: 25%;
+      }
+      @media (max-width: $tab) {
+        width: 50%;
+        text-align: right;
+      }
+      @media (max-width: $s-mob) {
+        width: 100%;
+        text-align: left;
       }
     }
   }

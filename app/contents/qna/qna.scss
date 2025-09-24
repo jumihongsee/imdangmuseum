@@ -5,6 +5,7 @@
   border-radius: 0;
   background: none;
   width: 100%;
+  border-top: 1px solid #000;
   .ant-collapse-item {
     &.ant-collapse-item-active {
       .ant-collapse-header {
@@ -28,6 +29,7 @@
       &::before {
         content: "Q";
         display: flex;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
         width: 40px;

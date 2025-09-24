@@ -47,8 +47,9 @@ export default function Exhibition() {
             </div>
           </div>
         </div>
-        <span className="bg-txt">IMDANG RELICS EXHIBITION</span>
-        <span className="bg"></span>
+        <span className="bg">
+          <span className="bg-txt">IMDANG RELICS EXHIBITION</span>
+        </span>
       </div>
     </section>
   );

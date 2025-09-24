@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .sublist-wrapper {
   margin-top: 60px;
   .sublist-cont {
@@ -5,6 +7,12 @@
     grid-template-columns: repeat(4, 1fr);
     row-gap: 80px;
     column-gap: 40px;
+    @media (max-width: $m-pc) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $mob) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     li {
       a {
         &:hover {
@@ -22,7 +30,7 @@
             overflow: hidden;
             word-break: keep-all;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
           }
           .list-title {

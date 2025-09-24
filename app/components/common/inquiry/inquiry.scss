@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .inquiry {
   .inquiry-num {
     display: flex;
@@ -7,12 +9,20 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-top: 80px;
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
     h4 {
       font-size: 20px;
       font-weight: 600;
       color: #000;
       padding-left: 25px;
       background: url(/img/contents/icon_tip.png) no-repeat left center;
+      @media (max-width: 640px) {
+        font-size: 18px;
+      }
     }
     em {
       padding-left: 15px;
@@ -21,6 +31,11 @@
       border-left: 1px solid #ddd;
       font-weight: 500;
       color: #444;
+      @media (max-width: 640px) {
+        padding-left: 0;
+        border: none;
+        font-size: 15px;
+      }
     }
   }
 }
@@ -68,9 +83,18 @@
         justify-content: space-between;
         width: 100%;
         margin-top: 10px;
+        @media (max-width: $s-pc) {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
         .rdio-group {
           display: flex;
-          width: calc(100% - 400px);
+          flex-wrap: wrap;
+          width: 50%;
+          @media (max-width: $s-pc) {
+            width: 100%;
+          }
           .rdo-btn {
             position: relative;
             vertical-align: middle;
@@ -126,7 +150,10 @@
           align-items: center;
           justify-content: flex-end;
           gap: 5px;
-          width: 100%;
+          width: 50%;
+          @media (max-width: $s-pc) {
+            width: 100%;
+          }
           input {
             width: 100%;
             max-width: 400px;
@@ -140,9 +167,14 @@
             padding: 0 10px;
             height: 40px;
             margin: 2px;
+            @media (max-width: $s-pc) {
+              max-width: 100%;
+            }
           }
           button {
             height: 40px;
+            width: 75px;
+            flex-shrink: 0;
             border-radius: 5px;
             font-size: 18px;
             color: #fff;

@@ -79,7 +79,9 @@ export default function SubListDetail({ category }) {
             <ul className="scholarship-list">
               {data?.contents.map((item, index) => (
                 <li key={index}>
-                  <p>{item?.presentation_info}</p>
+                  <p>
+                    <strong>{item?.presentation_info}</strong>
+                  </p>
                   <ul>
                     {item?.chapters?.map((list, index) => (
                       <li key={index}>{list}</li>

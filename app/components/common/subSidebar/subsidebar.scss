@@ -6,6 +6,13 @@
   width: 330px;
   flex-shrink: 0;
   z-index: 10;
+  @media (max-width: $s-pc) {
+    width: 300px;
+  }
+  @media (max-width: $ss-pc) {
+    display: none;
+  }
+
   h2 {
     font-size: 30px;
     font-weight: 600;

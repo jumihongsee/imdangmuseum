@@ -1,25 +1,56 @@
+@import "@/styles/variables";
 #exhibition-notice {
   .main-board {
     padding: 150px 0 150px;
     display: flex;
+    margin: 0 auto;
+    max-width: 1600px;
     justify-content: space-between;
     gap: 100px;
+    align-items: flex-start;
+    @media (max-width: $m-pc) {
+      padding: 150px 80px;
+    }
+    @media (max-width: $ss-pc) {
+      flex-direction: column;
+      gap: 50px;
+    }
+    @media (max-width: $l-tab) {
+      padding: 150px 60px;
+    }
+
+    @media (max-width: $mob) {
+      padding: 100px 50px 160px;
+    }
     .notice {
       width: calc(100% - 500px);
+      @media (max-width: $ss-pc) {
+        width: 100%;
+      }
       .list-head {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 50px;
+        @media (max-width: $l-tab) {
+          margin-bottom: 30px;
+        }
         h2 {
           font-size: 40px;
           font-weight: 600;
           color: #000;
+          @media (max-width: $l-tab) {
+            font-size: 34px;
+          }
         }
         a {
           font-size: 18px;
           font-weight: 500;
           line-height: 35px;
+          color: #444;
+          @media (max-width: $l-tab) {
+            font-size: 16px;
+          }
           &::after {
             display: inline-block;
             content: "";
@@ -30,6 +61,10 @@
             border-radius: 50%;
             margin-left: 10px;
             vertical-align: middle;
+            @media (max-width: $l-tab) {
+              width: 30px;
+              height: 30px;
+            }
           }
         }
       }
@@ -37,13 +72,25 @@
         ul {
           display: flex;
           justify-content: space-between;
-          //   gap: 30px;
+
+          @media (max-width: $m-pc) {
+            flex-direction: column;
+            gap: 20px;
+          }
           li {
             border: 1px solid #ccc;
             width: calc(100% / 3 - 20px);
             border-radius: 10px;
-            transition: all 0.3s ease;
+            transition:
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
             position: relative;
+            @media (max-width: $m-pc) {
+              width: 100%;
+            }
+            @media (max-width: $ss-pc) {
+              width: 100%;
+            }
             &:hover {
               transform: translateY(-10px);
               border: 1px solid #000;
@@ -55,6 +102,11 @@
               display: flex;
               flex-direction: column;
               padding: 60px 40px 110px 40px;
+
+              @media (max-width: $l-tab) {
+                gap: 10px;
+                padding: 30px 35px 70px 30px;
+              }
               span {
                 display: block;
               }
@@ -66,6 +118,9 @@
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+                @media (max-width: $l-tab) {
+                  font-size: 22px;
+                }
               }
               .list-noti {
                 display: inline-block;
@@ -95,6 +150,14 @@
                   overflow: hidden;
                   line-height: 1.5;
                   font-size: 17px;
+                  @media (max-width: $m-pc) {
+                    -webkit-line-clamp: 1;
+                    align-self: center;
+                  }
+                  @media (max-width: $mob) {
+                    -webkit-line-clamp: 2;
+                    font-size: 16px;
+                  }
                 }
                 .btn-view {
                   flex-shrink: 0;
@@ -105,6 +168,11 @@
                   background: #f4f4f4 url(/img/main/notice-more-view.png)
                     no-repeat center center;
                   text-indent: -9999px;
+                  @media (max-width: $m-pc) {
+                    width: 40px;
+                    height: 40px;
+                    background-size: 16px;
+                  }
                 }
               }
               .list-date {
@@ -116,6 +184,7 @@
                 border-top: 1px solid #ccc;
                 font-size: 16px;
                 font-weight: 500;
+                color: #444;
               }
             }
           }
@@ -126,15 +195,32 @@
       width: 400px;
       padding-right: 50px;
       position: relative;
+      img {
+        width: 100%;
+      }
+      @media (max-width: $ss-pc) {
+        width: 100%;
+        padding-right: 0;
+        img {
+          margin: 0 10px;
+        }
+      }
+
       &::after {
         position: absolute;
         content: "";
-        width: 346px;
+        width: 350px;
         height: 490px;
         background: #eee;
         right: 30px;
         top: 20px;
         z-index: 1;
+        @media (max-width: $ss-pc) {
+          width: 90%;
+          right: 0;
+          top: 20px;
+          height: 100%;
+        }
       }
       .slick-slider {
         height: 490px;
@@ -142,7 +228,15 @@
         overflow: hidden;
         z-index: 10;
         img {
+          margin: 0;
+        }
+        @media (max-width: $ss-pc) {
           width: 100%;
+          height: auto;
+          padding-right: 10px;
+          img {
+            padding-right: 20px;
+          }
         }
       }
       .slick-arrow {
@@ -151,7 +245,7 @@
       .slider-control {
         width: 100%;
         position: absolute;
-        bottom: 0;
+        bottom: -78px;
         display: flex;
         justify-content: space-between;
         .slider-pagination {

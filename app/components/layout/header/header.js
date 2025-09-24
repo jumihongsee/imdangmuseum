@@ -206,7 +206,12 @@ export default function Header({ isFixed }) {
             </a>
           </li>
           <li className="util-menu-2">
-            <a href="/imdangmuseum/main/contents/location">오시는 길</a>
+            <a
+              target="_blank"
+              href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=2075396019&urlLevel=3&urlX=895640&urlY=654481"
+            >
+              오시는 길
+            </a>
           </li>
         </ul>
       </div>
@@ -240,13 +245,19 @@ export default function Header({ isFixed }) {
                 </a>
               </li>
               <li className="util-menu-2">
-                <a href="/imdangmuseum/main/contents/location">오시는 길</a>
+                <a
+                  target="_blank"
+                  href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=2075396019&urlLevel=3&urlX=895640&urlY=654481"
+                >
+                  오시는 길
+                </a>
               </li>
             </ul>
           </div>
         </div>
         <Menu
           mode="inline"
+          inlineIndent={0}
           items={items}
           openKeys={openKeys}
           onOpenChange={(keys) => setOpenKeys(keys)}

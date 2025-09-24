@@ -29,7 +29,6 @@ export default function Inquiry() {
 
               <div className="form-row">
                 <div className="rdio-group">
-                  {/* 라디오 버튼 반복 */}
                   <div className="rdo-btn">
                     <input
                       type="radio"

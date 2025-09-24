@@ -24,10 +24,13 @@ export default function FooterInfo() {
           </ul>
         </div>
         <div className="exhibition-foot-btns">
-          <a href="" className="btn-guide">
+          <a href="/contents/viewInfo" className="btn-guide">
             관람안내
           </a>
-          <a href="" className="btn-location">
+          <a
+            href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=2075396019&urlLevel=3&urlX=895640&urlY=654481"
+            className="btn-location"
+          >
             오시는 길
           </a>
         </div>

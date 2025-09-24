@@ -1,6 +1,13 @@
+@import "@/styles/variables";
 #sub-visual {
   position: relative;
   height: 250px;
+  @media (max-width: $l-tab) {
+    height: 150px;
+  }
+  @media (max-width: $mob) {
+    height: 100px;
+  }
   .visual-cont {
     height: inherit;
     .visual-cont-wrap {
@@ -16,6 +23,12 @@
           font-size: 40px;
           position: relative;
           z-index: 10;
+          @media (max-width: $l-tab) {
+            font-size: 36px;
+          }
+          @media (max-width: $mob) {
+            font-size: 30px;
+          }
         }
       }
       .visual-img {

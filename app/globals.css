@@ -94,11 +94,10 @@ body {
   max-width: 100vw;
   background: #fff !important;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  /* color: var(--foreground);
-  background: var(--background); */
   font-family: "Pretendard";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -114,12 +113,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
 
 html,
 body,
@@ -285,10 +278,35 @@ a {
 em {
   font-style: normal;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ededed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6e6e7c;
+  border-radius: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
 .inr {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+  @media (max-width: 1024px) {
+    padding: 0 60px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 50px;
+  }
 }
 
 .cont-tit {
@@ -298,6 +316,9 @@ em {
   padding-bottom: 30px;
   position: relative;
   z-index: 2;
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -315,6 +336,9 @@ em {
     display: flex;
     justify-content: space-between;
     height: 65px;
+    @media (max-width: 768px) {
+      height: 48px;
+    }
     li {
       border: 1px solid #ccc;
       border-bottom: 1px solid #000;
@@ -329,10 +353,10 @@ em {
       }
       &.active {
         background: #edf1f9;
-        color: $sub-color-n;
+        color: #002856;
         border-color: #000;
         a {
-          color: $sub-color-n;
+          color: #002856;
 
           &::before {
             display: block;
@@ -355,6 +379,9 @@ em {
           width: 10px;
           height: 10px;
           background: url(/img/contents/tab_chk_on.png) no-repeat center center;
+        }
+        @media (max-width: 768px) {
+          font-size: 15px;
         }
       }
     }

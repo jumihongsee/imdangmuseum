@@ -1,20 +1,23 @@
 "use client";
 import "./notice.scss";
 import { useEffect, useRef, useState } from "react";
-import { Carousel } from "antd";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Notice() {
   const [data, setData] = useState();
   const [current, setCurrent] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(1);
 
-  const carouselRef = useRef(null);
+  const sliderRef = useRef(null);
 
   const next = () => {
-    carouselRef.current?.next();
+    sliderRef.current?.slickNext();
   };
 
   const prev = () => {
-    carouselRef.current?.prev();
+    sliderRef.current?.slickPrev();
   };
 
   useEffect(() => {
@@ -23,14 +26,48 @@ export default function Notice() {
       .then((data) => setData(data));
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth <= 1200) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(1);
+      }
+    };
+
+    handleResize(); // 초기 실행
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalSlide = 4; //슬라이드 총 계
+  const slidepage = totalSlide / slidesToShow;
+
+  const settings = {
+    arrows: false,
+    infinite: true,
+    dots: false,
+    autoplay: false,
+    speed: 300,
+    slidesToShow,
+    slidesToScroll: slidesToShow,
+    beforeChange: (current, next) => setCurrent(next),
+  };
+
   return (
     <section id="exhibition-notice">
-      <div className="inr">
+      <div className="notice-cont">
         <div className="main-board">
           <div className="notice">
             <div className="list-head">
               <h2>공지사항</h2>
-              <a href="" className="btn-more" title="공지사항 더보기">
+              <a
+                href={"/contents/board"}
+                className="btn-more"
+                title="공지사항 더보기"
+              >
                 더보기
               </a>
             </div>
@@ -56,17 +93,9 @@ export default function Notice() {
               </ul>
             </div>
           </div>
+
           <div className="bnr">
-            <Carousel
-              arrows
-              infinite={true}
-              dots={false}
-              ref={carouselRef}
-              autoplay={false}
-              speed={300}
-              initialSlide={0}
-              beforeChange={(current, next) => setCurrent(next)}
-            >
+            <Slider ref={sliderRef} {...settings}>
               <div>
                 <img src="/img/main/notice-3.jpg" alt="압독과 경산의 이음" />
               </div>
@@ -79,16 +108,23 @@ export default function Notice() {
               <div>
                 <img
                   src="/img/main/notice-2.jpg"
-                  alt="2025년 생생 국가유산 사업 도전! 압독문화탐방대 '기후변화 대응 프로그램' "
+                  alt="2025년 생생 국가유산 사업 도전! 압독문화탐방대"
                 />
               </div>
               <div>
                 <img src="/img/main/notice-4.jpg" alt="임당 고고 아카데미" />
               </div>
-            </Carousel>
+            </Slider>
+
             <div className="slider-control">
               <div className="slider-pagination">
-                <span>0{current + 1}</span> / <span>04</span>
+                <span>
+                  0
+                  {slidesToShow > 1
+                    ? Math.ceil((current + 1) / slidesToShow) // 두 장씩 보여줄 때
+                    : current + 1}
+                </span>
+                / <span>{slidesToShow > 1 ? "02" : "04"}</span>
               </div>
               <div className="slider-arrow-wrapper">
                 <button className="slider-prev" onClick={prev}>

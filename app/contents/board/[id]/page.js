@@ -9,7 +9,7 @@ export default function boardDeatail() {
   const [data, setData] = useState();
   const router = useRouter();
 
-  console.log(path.id);
+  // console.log(path.id);
 
   useEffect(() => {
     fetch("/data/notice.json")
@@ -40,7 +40,7 @@ export default function boardDeatail() {
         <h5>첨부파일</h5>
         <div className="file-wrapper">
           {data?.files.map((item, index) => (
-            <span className="link" key={index}>
+            <span className={`link ${index >= 1 ? "mt-10" : ""}`} key={index}>
               <a href={item.src} title="파일다운로드">
                 {item.alt + ".jpg"}
               </a>

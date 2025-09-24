@@ -21,8 +21,8 @@ export default function SeartchBar() {
           <div className="brd-search">
             <div className="select-wrap">
               <select
-                name=""
-                id=""
+                // name=""
+                // id=""
                 value={selectedVal}
                 onChange={(e) => setSelectedVal(e.target.value)}
               >
@@ -91,8 +91,8 @@ export default function SeartchBar() {
 
                 <div className="input-search">
                   <input
-                    id=""
-                    name=""
+                    // id=""
+                    // name=""
                     className="board-input"
                     title="검색어를 입력하세요"
                     placeholder="검색어를 입력하세요"

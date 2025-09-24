@@ -1,4 +1,4 @@
-@import "@/styles/variables";
+@import "@/styles/variables.scss";
 
 .search-bar {
   legend {
@@ -8,6 +8,9 @@
     padding: 30px 40px;
     border: 1px solid #e5e5e5;
     background: #f8f8f8;
+    @media (max-width: $mob) {
+      padding: 20px 30px;
+    }
 
     .select-wrap {
       // screen reader
@@ -23,6 +26,9 @@
         .left-select-box {
           width: 120px;
           position: relative;
+          @media (max-width: $mob) {
+            width: 65px;
+          }
           .select-title {
             background: #fff;
             padding: 15px 20px;
@@ -33,7 +39,11 @@
             color: #444;
             font-weight: 600;
             font-size: 16px;
-
+            @media (max-width: $mob) {
+              font-size: 14px;
+              padding: 15px 10px;
+              height: 40px;
+            }
             .arrow {
               width: 7px;
               height: 7px;
@@ -41,6 +51,10 @@
               border-style: solid;
               border-color: #666;
               transform: rotate(135deg);
+              @media (max-width: $mob) {
+                width: 6px;
+                height: 6px;
+              }
             }
           }
           ul {
@@ -80,10 +94,13 @@
         }
         .input-search {
           background: #fff;
-          width: 500px;
+          width: 400px;
           display: flex;
           justify-content: space-between;
-
+          @media (max-width: $mob) {
+            width: calc(100% - 65px);
+            height: 40px;
+          }
           input {
             width: calc(100% - 60px);
             border: none;
@@ -91,6 +108,9 @@
             color: #666;
             font-weight: 600;
             padding: 0 10px;
+            @media (max-width: $mob) {
+              font-size: 14px;
+            }
           }
           button {
             width: 50px;
@@ -98,6 +118,11 @@
             text-indent: -9999px;
             background: url("/img/contents/seach_btn_icon.png") no-repeat center
               center;
+            @media (max-width: $mob) {
+              width: 40px;
+              height: 40px;
+              background-size: 18px;
+            }
           }
         }
       }

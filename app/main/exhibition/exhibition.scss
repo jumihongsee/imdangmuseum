@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 #exhibition-cont {
   .section-cont {
     position: relative;
@@ -7,6 +9,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: $mob) {
+        justify-content: flex-start;
+      }
       .section-title {
         font-size: 40px;
         font-weight: 600;
@@ -15,6 +20,10 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        @media (max-width: $mob) {
+          font-size: 30px;
+        }
+
         &::before {
           content: "";
           width: 50px;
@@ -24,11 +33,20 @@
           border-radius: 50%;
           background: #000 url(/img/main/icon_exhibition_w.png) no-repeat center
             center;
+          @media (max-width: $mob) {
+            width: 40px;
+            height: 40px;
+            background-size: 16px;
+          }
         }
       }
       .tabs-header {
         position: absolute;
         right: 60px;
+        // right: 60px;
+        @media (max-width: $l-tab) {
+          right: 0px;
+        }
         ul {
           display: flex;
           align-items: center;
@@ -49,6 +67,7 @@
             }
             + li {
               border-left: 1px solid #ddd;
+              padding-right: 0;
             }
             &.active {
               &::before {
@@ -62,6 +81,9 @@
               color: #666;
               font-size: 20px;
               font-weight: 600;
+              @media (max-width: $tab) {
+                font-size: 18px;
+              }
             }
           }
         }
@@ -96,20 +118,12 @@
           background: #fff url("/img/main/icon_warning_brown.png") no-repeat
             center center;
         }
+        p {
+          font-size: 17px;
+        }
       }
     }
-    .bg-txt {
-      width: 100%;
-      text-align: center;
-      font-size: 100px;
-      font-weight: 800;
-      display: block;
-      position: absolute;
-      z-index: 2;
-      bottom: -23px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+
     .bg {
       position: absolute;
       bottom: 0;
@@ -117,6 +131,29 @@
       width: 100vw;
       height: calc(50% - 10px);
       z-index: 1;
+      overflow: hidden;
+    }
+
+    .bg-txt {
+      width: 100%;
+      text-align: center;
+      font-size: 100px;
+      color: #111;
+      font-weight: 800;
+      display: block;
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+      overflow: hidden;
+      bottom: -15px;
+
+      @media (max-width: $mob) {
+        font-size: 60px;
+        bottom: -8px;
+      }
     }
   }
 }
