@@ -1,7 +1,7 @@
 "use client";
 
 import "./searchBar.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function SeartchBar() {
   const [selectOpen, setSelectOpen] = useState(false);

@@ -1,6 +1,6 @@
 "use client";
 import Footer from "./Footer/Footer";
-import Header from "./header/Header";
+import Header from "./Header/Header";
 import { useState, useEffect } from "react";
 
 export default function LayoutWrapper({ children }) {
