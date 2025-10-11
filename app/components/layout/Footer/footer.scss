@@ -1,0 +1,166 @@
+@import "@/styles/variables";
+#footer {
+  background: $sub-color-b2;
+  padding: 100px 80px 120px;
+  @media (max-width: $mob) {
+    padding: 100px 50px 120px;
+  }
+  .inr {
+    padding: 0;
+  }
+  .footer-cont {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $mob) {
+      flex-direction: column;
+    }
+    address {
+      margin-top: 30px;
+      span {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ccc;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        font-style: normal;
+        @media (max-width: $mob) {
+          font-size: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .copy {
+      margin-top: 50px;
+      font-size: 13px;
+      color: #aaa;
+      letter-spacing: 0.06em;
+    }
+    .footer-left {
+      img {
+        @media (max-width: $mob) {
+          width: 150px;
+        }
+      }
+    }
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      @media (max-width: $mob) {
+        align-items: flex-start;
+        margin-top: 30px;
+      }
+      nav {
+        ul {
+          display: flex;
+          gap: 30px;
+          @media (max-width: $mob) {
+            gap: 15px;
+          }
+          li {
+            a {
+              font-size: 18px;
+              color: #888;
+              font-weight: 500;
+            }
+            &.policy {
+              a {
+                color: #c89e4e;
+              }
+            }
+          }
+        }
+      }
+      .family-site {
+        margin-top: 40px;
+        .drop-down {
+          display: inline-block;
+          position: relative;
+          .drop-title {
+            a {
+              min-width: 230px;
+              position: relative;
+              display: inline-block;
+              height: 40px;
+              padding: 0 35px 0 15px;
+              border: 1px solid #fff;
+              line-height: 40px;
+              color: #fff;
+              @media (max-width: $mob) {
+                min-width: 200px;
+                font-size: 14px;
+                padding: 0 30px 0 10px;
+                height: 35px;
+                line-height: 35px;
+              }
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 14px;
+                width: 7px;
+                height: 7px;
+                border: 1px solid #ccc;
+                border-width: 0 1px 1px 0;
+                transform: rotate(45deg);
+              }
+            }
+            &.active {
+              a {
+                &::after {
+                  top: 17px;
+                  transform: rotate(-135deg);
+                }
+              }
+            }
+          }
+          .drop-sub {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            border: 1px solid #fff;
+            border-bottom: none;
+            bottom: 40px;
+            background: #222;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            display: none;
+            &.active {
+              transform: translateY(0%);
+              pointer-events: auto;
+              visibility: visible;
+              display: block;
+            }
+
+            li {
+              a {
+                display: block;
+                font-size: 15px;
+                padding: 8px 10px;
+                color: #ddd;
+                border-bottom: 1px solid #ddd;
+              }
+              &:last-child {
+                a {
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .footer-wamark {
+        text-align: right;
+        margin: 25px 0;
+        @media (max-width: $mob) {
+          text-align: left;
+        }
+        img {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
