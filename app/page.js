@@ -1,4 +1,4 @@
-import Footer from "./components/layout/footer/Footer";
+import Footer from "./components/layout/Footer/Footer";
 import Banner from "./main/banner/Banner";
 import Exhibition from "./main/exhibition/Exhibition";
 import FooterInfo from "./main/info/Info";
