@@ -1,0 +1,23 @@
+@import "@/styles/variables";
+
+.cont-wrapper {
+  padding: 150px 80px 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  @media (max-width: $l-tab) {
+    padding: 100px 0 150px;
+  }
+  .inr {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 100px;
+    @media (max-width: $s-pc) {
+      gap: 80px;
+    }
+    .sub-contents {
+      width: 100%;
+    }
+  }
+}
