@@ -78,7 +78,14 @@ export default function Banner() {
           {data.map((item, index) => {
             return (
               <div key={index}>
-                <img className="banner-image" src={item.src} alt={item.alt} />
+                <img
+                  className="banner-image"
+                  src={item.src}
+                  alt={item.alt}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  loading={index === 0 ? undefined : "lazy"}
+                  decoding="async"
+                />
               </div>
             );
           })}
